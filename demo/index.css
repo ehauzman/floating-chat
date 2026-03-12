@@ -1,0 +1,31 @@
+:root {
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #0c0f1a;
+  background-color: #eef1f8;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: radial-gradient(
+    circle at top,
+    #f9fbff 0%,
+    #eef1f8 55%,
+    #e5e9f3 100%
+  );
+}
+
+a {
+  color: inherit;
+}
