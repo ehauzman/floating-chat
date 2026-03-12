@@ -1,5 +1,5 @@
 {
-  "name": "floating-chat",
+  "name": "react-floating-chat",
   "description": "React floating chat widget with customizable avatar, positioning, and async message handling.",
   "version": "1.0.0",
   "type": "module",
