@@ -26,6 +26,14 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Verify npm authentication
+        run: npm whoami
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Check package availability
+        run: npm view react-floating-chat version || echo "Package not found on npm (can be first publish or invalid name)."
+
       - name: Lint
         run: npm run lint
 
@@ -65,4 +73,5 @@ jobs:
           commit: "chore: release"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
