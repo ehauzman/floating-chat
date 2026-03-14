@@ -3,6 +3,7 @@ import React from "react";
 import ChatAvatar from "@/components/ChatAvatar/ChatAvatar";
 import ChatMessages from "@/components/ChatMessages/ChatMessages";
 import { useFloatingChat } from "@/hooks/useFloatingChat";
+import { useInitials } from "@/hooks/useInitials";
 import type { IFloatingChat } from "@/types/IFloatingChat";
 
 const FloatingChat: React.FC<IFloatingChat> = ({
@@ -18,6 +19,7 @@ const FloatingChat: React.FC<IFloatingChat> = ({
   onSend,
 }) => {
   const { isOpen, handleOpenChat, handleCloseChat } = useFloatingChat();
+  const initials = useInitials(name);
 
   return (
     <>
@@ -29,7 +31,7 @@ const FloatingChat: React.FC<IFloatingChat> = ({
         top={top}
         handleOpenChat={handleOpenChat}
       >
-        {children}
+        {children ?? initials}
       </ChatAvatar>
 
       {isOpen && (
