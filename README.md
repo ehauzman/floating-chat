@@ -175,7 +175,7 @@ npm run lint
 
 ## Releases
 
-Releases are automated with semantic-release when changes are merged into `main`.
+Releases are fully automated with semantic-release when changes are merged into `main`.
 
 - `fix:` commits produce a patch release
 - `feat:` commits produce a minor release
@@ -183,10 +183,12 @@ Releases are automated with semantic-release when changes are merged into `main`
 
 CI runs lint and build first, then semantic-release:
 
-- calculates the next version
+- calculates the next version from commit messages
 - creates a Git tag (`vX.Y.Z`)
 - publishes the package to npm
 - updates `CHANGELOG.md`
+
+No manual `npm run changeset` step is required.
 
 Required repository secrets for publishing:
 
