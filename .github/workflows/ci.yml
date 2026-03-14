@@ -39,8 +39,8 @@ jobs:
     if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     permissions:
       contents: write
-      issues: write
-      pull-requests: write
+      issues: read
+      pull-requests: read
 
     steps:
       - name: Checkout
