@@ -6,11 +6,7 @@ import { useFloatingChat } from '@/hooks/useFloatingChat';
 import type { IFloatingChat } from '@/types/IFloatingChat';
 import { getInitials } from '@/utils/getInitials';
 
-type FloatingChatProps = Omit<IFloatingChat, 'children'> & {
-	children?: React.ReactNode;
-};
-
-const FloatingChat: React.FC<FloatingChatProps> = ({
+const FloatingChat: React.FC<IFloatingChat> = ({
 	children,
 	name,
 	initial,
