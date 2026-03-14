@@ -57,6 +57,14 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Verify NPM_TOKEN is set
+        run: |
+          if [ -z "${{ secrets.NPM_TOKEN }}" ]; then
+            echo "Error: NPM_TOKEN secret is not set or is empty. Please configure NPM_TOKEN in the repository secrets."
+            exit 1
+          fi
+          echo "NPM_TOKEN secret is set."
+
       - name: Run semantic-release
         run: npm run release
         env:
