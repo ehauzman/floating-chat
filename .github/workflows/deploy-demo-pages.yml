@@ -35,24 +35,10 @@ jobs:
       - name: Build demo for GitHub Pages
         run: npm run build:demo:pages
 
-      - name: Archive Pages artifact
-        run: |
-          tar \
-            --dereference --hard-dereference \
-            --directory demo/dist \
-            -cvf "$RUNNER_TEMP/artifact.tar" \
-            --exclude=.git \
-            --exclude=.github \
-            --exclude=".[^/]*" \
-            .
-
       - name: Upload Pages artifact
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: github-pages
-          path: ${{ runner.temp }}/artifact.tar
-          retention-days: 1
-          if-no-files-found: error
+          path: demo/dist
 
   deploy:
     environment:
