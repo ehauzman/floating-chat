@@ -123,11 +123,13 @@ function App() {
 				left={resolvedProps.left}
 				onSend={handleSend}
 			>
-				<Avatar
-					avatarImageUrl={avatarImageUrl}
-					avatarType={avatarType}
-					avatarValue={avatarValue}
-				/>
+				{avatarType !== 'initials' ? (
+					<Avatar
+						avatarImageUrl={avatarImageUrl}
+						avatarType={avatarType}
+						avatarValue={avatarValue}
+					/>
+				) : null}
 			</FloatingChat>
 		</div>
 	);
