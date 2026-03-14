@@ -24,6 +24,7 @@
     "dev": "vite",
     "build": "cross-env LIB_BUILD=true vite build && cross-env LIB_BUILD=true tsc -p tsconfig.lib.json",
     "build:demo": "vite build",
+    "build:demo:pages": "vite build --base=/floating-chat/",
     "changeset": "changeset",
     "lint": "eslint .",
     "prepublishOnly": "npm run lint && npm run build",

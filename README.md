@@ -144,6 +144,27 @@ npm run build
 npm run build:demo
 ```
 
+### Deploy demo to GitHub Pages
+
+This repository includes a workflow that deploys the demo app from `demo/dist` to GitHub Pages.
+
+1. In GitHub, open repository settings.
+2. Go to **Pages**.
+3. Set **Source** to **GitHub Actions**.
+4. Push to `main` (or run the workflow manually from the **Actions** tab).
+
+Build command used for Pages:
+
+```bash
+npm run build:demo:pages
+```
+
+The Pages URL will be:
+
+```text
+https://ehauzman.github.io/floating-chat/
+```
+
 ### Lint
 
 ```bash
