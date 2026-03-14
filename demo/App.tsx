@@ -61,7 +61,7 @@ function App() {
     <div className="app">
       <header className="app__header">
         <p className="app__eyebrow">Floating Chat Library</p>
-        <h1 className="app__title">Local Demo</h1>
+        <h1 className="app__title">Live Demo</h1>
         <p className="app__subtitle">
           This view exists only for development. The library build exports the
           FloatingChat component.
