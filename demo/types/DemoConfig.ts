@@ -2,7 +2,7 @@ export type TDemoConfig = {
   name: string;
   initial: string;
   thinking: string;
-  avatarType: "emoji" | "text" | "badge" | "image";
+  avatarType: "initials" | "emoji" | "text" | "badge" | "image";
   avatarValue: string;
   avatarImageUrl: string;
   size: number;

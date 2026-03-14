@@ -12,7 +12,7 @@ export interface IOnSendHelpers {
 }
 
 export interface IFloatingChat extends IAvatarContainer {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   name: string;
   initial?: string;
   thinking?: string;

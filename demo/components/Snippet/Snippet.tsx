@@ -58,6 +58,10 @@ const Snippet: React.FC<{
       parts.push(`left={${left}}`);
     }
 
+    if (avatarType === "initials") {
+      return `<FloatingChat ${parts.join(" ")} />`;
+    }
+
     let childSnippet = `<span>${avatarValue || "💬"}</span>`;
 
     if (avatarType === "text") {
