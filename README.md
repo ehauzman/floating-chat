@@ -8,6 +8,8 @@
 
 `floating-chat` is a React component library that renders a floating chat button and a chat panel.
 
+Live demo: https://ehauzman.github.io/floating-chat/
+
 The component is designed to be simple to drop into an existing app. You provide:
 
 - A custom avatar via `children`
