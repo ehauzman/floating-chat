@@ -194,6 +194,8 @@ Required repository secrets for publishing:
 
 - `NPM_TOKEN`
 
+This project publishes to npmjs.org.
+
 ## Project Structure
 
 - `src/components/FloatingChat`: main exported component
