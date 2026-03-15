@@ -1,4 +1,4 @@
-name: CI
+name: Continuous Integration
 
 on:
   push:
@@ -21,7 +21,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: 24
+          node-version: "lts/*"
 
       - name: Install dependencies
         run: npm install
@@ -36,7 +36,6 @@ jobs:
     name: Semantic Release
     runs-on: ubuntu-latest
     needs: lint-and-build
-    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     permissions:
       contents: write
       issues: write
@@ -51,14 +50,14 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: 24
+          node-version: "lts/*"
           registry-url: https://registry.npmjs.org/
 
       - name: Install dependencies
         run: npm install
 
       - name: Run semantic-release
-        run: npm run release
+        run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
